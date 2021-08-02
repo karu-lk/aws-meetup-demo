@@ -1,0 +1,24 @@
+{
+    "family": "aws-demo-task-definition", 
+    "networkMode": "awsvpc",
+    "executionRoleArn": "arn:aws:iam::626870706694:role/ecsTaskExecutionRole",
+    "containerDefinitions": [
+        {
+            "name": "aws-demo-app", 
+            "image": "626870706694.dkr.ecr.ap-southeast-2.amazonaws.com/aws-demo-repository:latest", 
+            "portMappings": [
+                {
+                    "containerPort": 80, 
+                    "hostPort": 80, 
+                    "protocol": "tcp"
+                }
+            ], 
+            "essential": true
+        }
+    ], 
+    "requiresCompatibilities": [
+        "FARGATE"
+    ], 
+    "cpu": "256", 
+    "memory": "512"
+}
